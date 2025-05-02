@@ -51,8 +51,6 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#contact">GET A QUOTE</a>
-
     </div>
   </header><!-- End Header -->
 
@@ -66,8 +64,7 @@
             <h1>INTEGRATED FACILITY MANAGEMENT SERVICES</h1>
             <p>VSS GROUP offers comprehensive facility management and security services to help your business operate smoothly and securely. Our ISO 9001-2015 certified services provide a single point of contact for all your facility and security needs.</p>
             <div class="d-flex">
-              <a href="#about" class="btn-get-started">Learn More</a>
-              <a href="#contact" class="btn-watch-video d-flex align-items-center"><i class="bi bi-telephone"></i><span>Contact Us</span></a>
+              <a href="#contact" class="btn-get-started btn-contact-us d-flex align-items-center"><i class="bi bi-telephone me-2"></i>Contact Us</a>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
@@ -869,60 +866,63 @@
       </div>
 
       <div class="container" data-aos="zoom-in">
-        <div class="swiper init-swiper">
+        <div class="swiper init-swiper client-logos-swiper">
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
-              "speed": 600,
+              "speed": 3000,
               "autoplay": {
-                "delay": 5000
+                "delay": 0,
+                "disableOnInteraction": false,
+                "pauseOnMouseEnter": true
               },
               "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
+              "spaceBetween": 20,
+              "centeredSlides": true,
               "breakpoints": {
                 "320": {
                   "slidesPerView": 2,
-                  "spaceBetween": 40
+                  "spaceBetween": 20
                 },
                 "480": {
                   "slidesPerView": 3,
-                  "spaceBetween": 60
+                  "spaceBetween": 30
                 },
                 "640": {
                   "slidesPerView": 4,
-                  "spaceBetween": 80
+                  "spaceBetween": 40
+                },
+                "992": {
+                  "slidesPerView": 5,
+                  "spaceBetween": 40
                 }
               }
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/clients/bptp.jpg" class="img-fluid" alt="BPTP"></div>
-            <div class="swiper-slide"><img src="assets/clients/aamb.jpg" class="img-fluid" alt="AAMB"></div>
-            <div class="swiper-slide"><img src="assets/clients/piolax.JPG" class="img-fluid" alt="Piolax"></div>
-            <div class="swiper-slide"><img src="assets/clients/aihp.jpg" class="img-fluid" alt="AIHP"></div>
-            <div class="swiper-slide"><img src="assets/clients/GEMS_Education_new_logo_version.png" class="img-fluid" alt="GEMS International"></div>
-            <div class="swiper-slide"><img src="assets/clients/jindal.gif" class="img-fluid" alt="Jindal"></div>
-            <div class="swiper-slide"><img src="assets/clients/ocus.png" class="img-fluid" alt="Ocus"></div>
-            <div class="swiper-slide"><img src="assets/clients/riya-travel-tours-india-private-limited.jpg" class="img-fluid" alt="Riya Travels"></div>
-            <div class="swiper-slide"><img src="assets/clients/Targray_Logo_no_banner_transparent_bkgnd_752_x_244.gif" class="img-fluid" alt="targray"></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/bptp.jpg" class="img-fluid" alt="BPTP"></div></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/aamb.jpg" class="img-fluid" alt="AAMB"></div></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/piolax.JPG" class="img-fluid" alt="Piolax"></div></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/aihp.jpg" class="img-fluid" alt="AIHP"></div></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/GEMS_Education_new_logo_version.png" class="img-fluid" alt="GEMS International"></div></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/jindal.gif" class="img-fluid" alt="Jindal"></div></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/ocus.png" class="img-fluid" alt="Ocus"></div></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/riya-travel-tours-india-private-limited.jpg" class="img-fluid" alt="Riya Travels"></div></div>
+            <div class="swiper-slide"><div class="client-logo-container"><img src="assets/clients/Targray_Logo_no_banner_transparent_bkgnd_752_x_244.gif" class="img-fluid" alt="targray"></div></div>
           </div>
         </div>
       </div>
     </section><!-- End Clients Section -->
 
     <!-- ======= Call To Action Section ======= -->
-    <section id="call-to-action" class="call-to-action section dark-background">
+    <section id="call-to-action" class="call-to-action section dark-background aos-init aos-animate">
       <div class="container">
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-9 text-center text-xl-start">
+        <div class="row">
+          <div class="col-xl-9 text-center text-xl-start aos-init aos-animate">
             <h3>Need Integrated Facility Management?</h3>
             <p>Our team of specialists provides a single point of contact for all your security and facility management needs. Get a personalized assessment for your business today.</p>
           </div>
-          <div class="col-xl-3 cta-btn-container text-center">
+          <div class="col-xl-3 cta-btn-container text-center aos-init aos-animate">
             <a class="cta-btn align-middle" href="#contact">Request Quote</a>
           </div>
         </div>

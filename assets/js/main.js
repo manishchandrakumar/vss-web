@@ -68,6 +68,9 @@
       setTimeout(() => {
         history.pushState(null, null, targetId);
       }, 800); // Wait for scroll to complete
+      
+      // Ensure AOS animations are visible in the section
+      refreshAOSForSection(targetId);
     });
   });
 
@@ -80,7 +83,6 @@
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -133,11 +135,86 @@
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
-      once: true,
-      mirror: false
+      once: true, // Set back to true to prevent re-animation
+      mirror: false,
+      disable: 'mobile' // Disable on mobile for better performance
     });
   }
-  window.addEventListener('load', aosInit);
+  
+  /**
+   * Helper function to refresh AOS for a specific section and make it always visible
+   */
+  function refreshAOSForSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    if (!section) return;
+
+    // Find all elements with data-aos in the section
+    const aosElements = section.querySelectorAll('[data-aos]');
+    
+    // Make all aos elements permanently visible
+    aosElements.forEach(el => {
+      el.classList.add('aos-animate');
+    });
+  }
+
+  window.addEventListener('load', function() {
+    aosInit();
+    
+    // Special handling for direct navigation to sections via hash in URL
+    if (window.location.hash) {
+      if (document.querySelector(window.location.hash)) {
+        setTimeout(() => {
+          let section = document.querySelector(window.location.hash);
+          let headerHeight = document.querySelector('#header').offsetHeight;
+          
+          // Scroll to the section
+          window.scrollTo({
+            top: section.offsetTop - headerHeight - 20,
+            behavior: 'smooth'
+          });
+          
+          // Force AOS animations to show for this section
+          refreshAOSForSection(window.location.hash);
+          
+          // Ensure Call to Action and Contact sections remain visible once animated
+          document.querySelectorAll('#call-to-action, #contact').forEach(section => {
+            refreshAOSForSection('#' + section.id);
+          });
+        }, 300); // Increased timeout for better reliability
+      }
+    }
+  });
+
+  // Handle Call to Action section visibility
+  function ensureCallToActionVisible() {
+    const callToActionSection = document.querySelector('#call-to-action');
+    if (!callToActionSection) return;
+    
+    // Remove AOS animation and make it always visible
+    callToActionSection.classList.add('aos-animate');
+    
+    // Find all child elements with AOS and make them visible too
+    callToActionSection.querySelectorAll('[data-aos]').forEach(el => {
+      el.classList.add('aos-animate');
+    });
+  }
+
+  // Call this function on scroll to ensure the section stays visible
+  document.addEventListener('scroll', function() {
+    const callToActionSection = document.querySelector('#call-to-action');
+    if (!callToActionSection) return;
+    
+    const rect = callToActionSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+    // If section is in viewport or has been scrolled past
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+      ensureCallToActionVisible();
+    }
+  });
+
+  // Ensure Call to Action visible after 1 second regardless of scroll position
+  setTimeout(ensureCallToActionVisible, 1000);
 
   /**
    * Initiate glightbox
@@ -256,6 +333,9 @@
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
         document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
         navmenulink.classList.add('active');
+        
+        // Make sure sections remain visible once scrolled to
+        refreshAOSForSection(navmenulink.hash);
       } else {
         navmenulink.classList.remove('active');
       }

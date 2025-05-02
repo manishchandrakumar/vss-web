@@ -61,6 +61,15 @@
   background: #c91a1f !important;
 }
 
+/* Larger Contact Us button with increased padding */
+.btn-contact-us {
+  padding: 14px 34px !important; /* Increased padding for larger size */
+  font-size: 16px !important; /* Slightly larger font */
+  font-weight: 600 !important; /* Make text bolder */
+  letter-spacing: 0.5px !important; /* Improve text readability */
+  box-shadow: 0 4px 10px rgba(227, 30, 36, 0.3) !important; /* Add subtle shadow */
+}
+
 /* Service icons */
 .service-item .icon {
   color: var(--primary-color) !important;
@@ -533,4 +542,197 @@ section[id] {
   width: 70px;
   background-color: var(--primary-color);
   margin: 0 auto 40px;
+}
+
+/* Client Logo Styling */
+.client-logo-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  height: 120px;
+  width: 100%; /* Changed from fixed 250px to 100% for responsiveness */
+  max-width: 250px; /* Added max-width to maintain size on larger screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin: 10px auto; /* Changed from 10px 15px to center cards */
+  transition: all 0.3s ease;
+}
+
+.client-logo-container img {
+  max-height: 85%;
+  max-width: 90%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.client-logo-container:hover {
+  box-shadow: 0 5px 15px rgba(227, 30, 36, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments for service cards and client logos */
+@media (max-width: 767px) {
+  .client-logo-container {
+    height: 100px; /* Reduced height for mobile */
+    padding: 10px;
+  }
+  
+  /* Fix service item positioning on mobile */
+  .service-item {
+    margin-bottom: 30px; /* Add bottom margin to separate cards */
+  }
+  
+  /* Ensure service items don't overlap in mobile view */
+  .col-xl-4.col-md-6.d-flex {
+    width: 100%; /* Full width on very small devices */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Ensure continuous sliding for clients section */
+.clients .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+/* Mobile navigation menu fixes */
+@media (max-width: 1199px) {
+  .navmenu ul {
+    background-color: #fff !important;
+  }
+  
+  .navmenu a, 
+  .navmenu a:focus {
+    color: #333333 !important; /* Darker text color for better contrast on white background */
+  }
+  
+  .navmenu .active, 
+  .navmenu .active:focus {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+  }
+  
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #333 !important; /* Change close button color for better visibility */
+  }
+}
+
+/* Mobile navigation menu enhancements */
+@media (max-width: 1199px) {
+  /* Existing mobile menu fixes */
+  .navmenu ul {
+    background-color: #fff !important;
+    border-radius: 10px !important;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15) !important;
+    padding: 15px 0 !important;
+  }
+  
+  .navmenu a, 
+  .navmenu a:focus {
+    color: #333333 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    padding: 12px 25px !important;
+    margin: 0 !important; /* Removed horizontal margin */
+    border-left: 3px solid transparent !important;
+    border-radius: 0 !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important; /* Make item take full width */
+    display: block !important; /* Ensure block display for full width */
+  }
+  
+  .navmenu a:hover {
+    background-color: rgba(227, 30, 36, 0.05) !important;
+    color: var(--primary-color) !important;
+    border-left: 3px solid var(--primary-color) !important;
+  }
+  
+  .navmenu .active, 
+  .navmenu .active:focus {
+    color: var(--primary-color) !important;
+    background-color: rgba(227, 30, 36, 0.05) !important;
+    border: none !important;
+    border-left: 3px solid var(--primary-color) !important;
+    border-radius: 0 !important;
+    padding: 12px 25px !important;
+    width: 100% !important; /* Make active item take full width */
+  }
+  
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+  
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #333 !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+    right: 20px !important;
+    top: 20px !important;
+  }
+  
+  /* Hide back-to-top button when mobile menu is open */
+  .mobile-nav-active .scroll-top {
+    display: none !important;
+  }
+  
+  /* Hide back-to-top button on mobile completely - alternative option */
+  @media (max-width: 768px) {
+    .scroll-top {
+      display: none !important;
+    }
+  }
+  
+  /* Burger icon enhancement */
+  .mobile-nav-toggle {
+    background-color: rgba(227, 30, 36, 0.85) !important;
+    color: #ffffff !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 3px 10px rgba(227, 30, 36, 0.3) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .mobile-nav-toggle:hover {
+    background-color: var(--primary-color) !important;
+    transform: scale(1.05) !important;
+  }
+  
+  /* Animation for menu appearance */
+  .mobile-nav-active .navmenu ul {
+    animation: fadeInDown 0.3s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add dividers between menu items */
+  .navmenu ul li:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Fix to ensure full width for the active item */
+  .navmenu ul li {
+    width: 100% !important;
+    display: block !important;
+  }
 }
