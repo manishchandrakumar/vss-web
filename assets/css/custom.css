@@ -1,0 +1,227 @@
+/* VSS Custom Colors and Styling */
+
+:root {
+  /* Override primary color with VSS red */
+  --primary-color: #e31e24; /* VSS red color from logo */
+  --secondary-color: #000000; /* Black color from logo */
+  --accent-color: #333333;
+}
+
+/* Update header styling */
+.header {
+  background-color: rgba(40, 40, 40, 0.9) !important;
+}
+
+.header .logo span {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Update navigation menu */
+.navmenu a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+.navmenu .active {
+  color: #ffffff;
+  border-color: var(--primary-color) !important;
+}
+
+/* Hero section updates */
+.hero {
+  background-position: center;
+  background-size: cover;
+  padding-top: 240px !important;
+}
+
+.hero:before {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.hero h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+/* Button styling */
+.btn-getstarted,
+.btn-get-started {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-getstarted:hover,
+.btn-get-started:hover {
+  background: #c91a1f !important;
+}
+
+/* Service icons */
+.service-item .icon {
+  color: var(--primary-color) !important;
+}
+
+/* Section headers */
+.section-title h2 {
+  color: var(--secondary-color);
+}
+
+.section-title h2:after {
+  background: var(--primary-color) !important;
+}
+
+/* Footer update */
+.footer {
+  background-color: #222222 !important;
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+}
+
+/* Call to Action Section */
+.call-to-action {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/call-to-action-bg.jpg") !important;
+}
+
+.call-to-action .cta-btn {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.call-to-action .cta-btn:hover {
+  background: #c91a1f !important;
+}
+
+/* Feature icons */
+.bi-check2-circle {
+  color: var(--primary-color) !important;
+}
+
+/* About section read more link */
+.read-more span {
+  color: var(--primary-color);
+}
+
+.read-more:hover span {
+  color: #c91a1f;
+}
+
+/* VSS Value icons */
+.vss-values-box {
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  height: 100%; /* Ensure all boxes have the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.vss-values-box:hover {
+  transform: translateY(-5px);
+}
+
+.vss-values-box img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.vss-values-box h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+  min-height: 48px; /* Ensure all titles have the same height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vss-values-box p {
+  font-size: 14px;
+  color: #777;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-icon {
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contact form button */
+.contact form button[type="submit"] {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.contact form button[type="submit"]:hover {
+  background: #c91a1f !important;
+}
+
+/* High Quality Services Banner */
+.quality-banner {
+  background: rgba(227, 30, 36, 0.05);
+  padding: 40px 0;
+  margin: 40px 0;
+  border-left: 6px solid var(--primary-color);
+}
+
+.quality-banner h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.quality-banner p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Additional custom styles for VSS website */
+
+/* Logo image size in footer */
+.logo-image {
+  max-height: 40px;
+}
+
+/* Accessibility helper */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Modal styles */
+.modal-dialog.modal-lg {
+  max-width: 800px;
+}
+
+.modal-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
