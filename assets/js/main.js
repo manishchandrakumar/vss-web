@@ -37,6 +37,41 @@
   }
 
   /**
+   * Handle smooth scrolling and URL hash update for anchor links
+   */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      // Don't prevent default for "#" links (sometimes used for toggles)
+      if (this.getAttribute('href') === '#') return;
+      
+      e.preventDefault();
+      
+      // Get the target section
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      
+      if (!targetSection) return;
+      
+      // Get header height for offset calculation
+      const headerHeight = document.querySelector('#header').offsetHeight;
+      
+      // Calculate the offset position
+      const offsetPosition = targetSection.offsetTop - headerHeight - 20;
+      
+      // Scroll to the target with offset
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Update URL hash after scrolling
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 800); // Wait for scroll to complete
+    });
+  });
+
+  /**
    * Hide mobile nav on same-page/hash links
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
@@ -197,9 +232,9 @@
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
           let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          let headerHeight = document.querySelector('#header').offsetHeight;
           window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
+            top: section.offsetTop - headerHeight - 20,
             behavior: 'smooth'
           });
         }, 100);

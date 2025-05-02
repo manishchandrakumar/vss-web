@@ -225,3 +225,312 @@
   height: auto;
   border-radius: 5px;
 }
+
+/* Contact section special positioning */
+#contact {
+  scroll-margin-top: 120px; /* Increased margin to ensure visibility */
+  padding-top: 40px; /* Additional padding at the top */
+}
+
+/* Ensure all sections have proper scroll margins */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* Four Pillars of Excellence Section Styles */
+.pillars-section {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.pillars-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.pillars-section h2:after {
+  content: '';
+  width: 70px;
+  height: 3px;
+  background: var(--primary-color);
+  display: block;
+  margin: 10px auto;
+}
+
+.pillar-card {
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+}
+
+.pillar-header {
+  background-color: #e31e24;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.pillar-header:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e31e24;
+}
+
+.pillar-content {
+  padding: 25px 20px 15px;
+}
+
+.pillar-subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 10px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.pillar-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.pillar-list li:before {
+  content: '\F270';
+  font-family: 'bootstrap-icons';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 991px) {
+  .pillar-card {
+    margin-bottom: 30px;
+  }
+}
+
+/* Additional styling for Four Pillars integration */
+.pillars-subtitle {
+  color: var(--primary-color);
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.pillars-intro {
+  font-size: 18px;
+  color: #444444;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.pillar-conclusion {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(227, 30, 36, 0.03);
+  border-left: 4px solid var(--primary-color);
+}
+
+.pillar-conclusion p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .pillars-subtitle {
+    font-size: 22px;
+  }
+  
+  .pillars-intro {
+    font-size: 16px;
+  }
+}
+
+/* Service Pillar Cards for the Services Section */
+.service-pillar {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-pillar:hover {
+  transform: translateY(-10px);
+}
+
+.service-pillar-header {
+  background-color: var(--primary-color);
+  padding: 15px 20px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.service-pillar-header h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.service-pillar-header:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--primary-color);
+}
+
+.service-pillar-content {
+  background-color: #fff;
+  padding: 25px 20px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-pillar-subtitle {
+  text-align: center;
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 20px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.service-pillar-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.service-pillar-list li {
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.service-pillar-list li:before {
+  content: '\F26E';
+  font-family: 'bootstrap-icons';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.service-pillar-btn {
+  text-align: center;
+  margin-top: auto;
+}
+
+.service-pillar-btn a {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.service-pillar-btn a:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .pillars-subtitle {
+    font-size: 22px;
+  }
+  
+  .pillars-intro {
+    font-size: 16px;
+  }
+  
+  .service-pillar {
+    margin-bottom: 30px;
+  }
+  
+  .service-pillar-header h3 {
+    font-size: 20px;
+  }
+}
+
+/* Services Intro Section */
+.services-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services-intro h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.services-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* Visual separator */
+.visual-separator {
+  height: 3px;
+  width: 70px;
+  background-color: var(--primary-color);
+  margin: 0 auto 40px;
+}
